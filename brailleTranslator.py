@@ -73,6 +73,7 @@ print (to_carlcode(test))
 '''
 
 braille=[1,1]
+#global english
 
 brailleDictionary={
     "r":[[1,0],[0,1],[1,0]]                        #101110
@@ -84,10 +85,17 @@ def braillex(text):                                        #test translator func
     english=[]
 
     for x in text:
-        english.append(brailleDictionary[x.lower()])
-
+        english.insert(0,brailleDictionary[x.lower()])
+    print (english)
+    print ("Index 1: ",english[0])
     return english
 
 test=input("enter word: \n")
 print (braillex(test))
+  #print list elements from list called braille, as single string (Not: 1,2,3 or [1,2,3] but 123 (also not 1 2 3))
+#print (''.join(map(str, english)))
+brailleString=braillex(test)
+#print (brailleString)
+#print (''.join(map(str, brailleString)))
 
+print (brailleString[0])
