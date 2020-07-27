@@ -30,5 +30,21 @@ letters:
 
 UAT Testing: ( expand comment section once done testing new elements)
 '''
+#Translator logic:
 
-braille=[1,]
+def to_carlcode(text):                                        #Working translator function (only handles these letters: "carlyle')
+    code= { 'c':'2','a':'0','r':'t','l':'1','y':'v','e':'3'}  #Dictionary
+    carlcode=""
+
+    for x in text:
+        carlcode += code[x.lower()]
+
+    return carlcode
+
+
+test=input("enter word: \n")
+print (to_carlcode(test))
+
+
+
+braille=[1,1]
