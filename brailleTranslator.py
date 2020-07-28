@@ -34,18 +34,8 @@ brailleDictionary={
 
 #print(brailleDictionary[d])
 
+
 def braille(text):
-    english=""
-
-    for x in text:
-        english += brailleDictionary[x.lower()]
-
-    return english
-
-test=input("enter word: \n")
-print (braille(test))
-
-def braille_with_upper(text):
     english=""
 
     for x in text:
@@ -57,6 +47,6 @@ def braille_with_upper(text):
     return english
 
 test=input("enter word: \n")
-print (braille_with_upper(test))
+print (braille(test))
 
 
