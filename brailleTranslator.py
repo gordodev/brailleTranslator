@@ -45,3 +45,18 @@ def braille(text):
 test=input("enter word: \n")
 print (braille(test))
 
+def braille_with_upper(text):
+    english=""
+
+    for x in text:
+        if x.isupper():
+            #print("uppercase")
+            english += "000001"
+        english += brailleDictionary[x.lower()]
+
+    return english
+
+test=input("enter word: \n")
+print (braille_with_upper(test))
+
+
