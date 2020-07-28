@@ -1,101 +1,46 @@
 #!/usr/bin/python3
-#Begin
 
-
-'''  NOTES:
-
-    #print list elements from list called braille, as single string (Not: 1,2,3 or [1,2,3] but 123 (also not 1 2 3))
-print (''.join(map(str, braille)))
-
-----------------------------------------------------------I/O EXAMPLES
-
--- Python cases --
-Input:
-solution.solution("code")
-Output:
-    100100101010100110100010
-______________
-#For letter r: 
-Need to do this:
-    101110  >  111010
-This read in this order
- |             |
-10             14
-11             25
-10             36
-____________
-
-Braille > 000001110000111010100000010100111000111000100010        #Initial is upper
-
-UPPER code:
-    _____?
-    000001110000111010100000010100111000111000100010  Braile
-    0000010111101100101000100000001111                The quick brown fox ....
-
-_____________
-letters:
-    e > 11000100010 (is this e?)
-    e > "e" : [[1,0],[0,1],[1,0]] or 100110(from github)
-    a > "e" : [[1,0],[0,1],[1,0]]  ?
-_____________
-
-UAT Testing: ( expand comment section once done testing new elements)
-
-#Translator logic:
-
-def to_carlcode(text):                                        #Working translator function (only handles these letters: "carlyle')
-    code= { 'c':'2','a':'0','r':'t','l':'1','y':'v','e':'3'}  #Dictionary
-    carlcode=""
-
-    for x in text:
-        carlcode += code[x.lower()]
-
-    return carlcode
-
-
-test=input("enter word: \n")
-print (to_carlcode(test))
-
-#Test single letter brail translator
-def braillex(text):                                        #test translator function (only handles these letters: "c')
-    code= { 'c':'2','a':'0','r':'t','l':'1','y':'v','e':'3'}  #Dictionary
-    carlcode=""
-
-    for x in text:
-        carlcode += code[x.lower()]
-
-    return carlcode
-
-
-test=input("enter word: \n")
-print (to_carlcode(test))
-
-'''
-
-braille=[1,1]
-#global english
+#Braille converter program
 
 brailleDictionary={
-    "r":[[1,0],[0,1],[1,0]]                        #101110
+	"a":"100000",
+	"b":"101000",
+	"c":"110000",
+	"d":"110100",
+	"e":"100100",
+	"f":"111000",
+	"g":"111100",
+	"h":"101100",
+	"i":"011000",
+	"j":"011100",
+	"k":"100010",
+	"l":"101010",
+	"m":"110010",
+	"n":"110110",
+	"o":"100110",
+	"p":"111010",
+	"q":"111110",
+	"r":"101110",
+	"s":"011010",
+	"t":"011110",
+	"u":"100011",
+	"v":"101011",
+	"w":"011101",
+	"x":"110011",
+	"y":"110111",
+	"z":"100111"
         }
 
-#Test single letter brail translator
-def braillex(text):                                        #test translator function (only handles these letters: "c')
-    #code= { 'c':'2','a':'0','r':'t','l':'1','y':'v','e':'3'}  #Dictionary
-    english=[]                                            #Create empty list
+#print(brailleDictionary[d])
+
+def braille(text):
+    english=""
 
     for x in text:
-        english.insert(0,brailleDictionary[x.lower()])    #iterate through each letter from user and insert into list called english
-    print (english)                                       #Print final list
-    print ("Index 1: ",english[0])
+        english += brailleDictionary[x.lower()]
+
     return english
 
 test=input("enter word: \n")
-print (braillex(test))
-  #print list elements from list called braille, as single string (Not: 1,2,3 or [1,2,3] but 123 (also not 1 2 3))
-#print (''.join(map(str, english)))
-brailleString=braillex(test)
-#print (brailleString)
-#print (''.join(map(str, brailleString)))
+print (braille(test))
 
-print (brailleString[0])
