@@ -82,11 +82,11 @@ brailleDictionary={
 #Test single letter brail translator
 def braillex(text):                                        #test translator function (only handles these letters: "c')
     #code= { 'c':'2','a':'0','r':'t','l':'1','y':'v','e':'3'}  #Dictionary
-    english=[]
+    english=[]                                            #Create empty list
 
     for x in text:
-        english.insert(0,brailleDictionary[x.lower()])
-    print (english)
+        english.insert(0,brailleDictionary[x.lower()])    #iterate through each letter from user and insert into list called english
+    print (english)                                       #Print final list
     print ("Index 1: ",english[0])
     return english
 
