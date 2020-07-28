@@ -28,7 +28,8 @@ brailleDictionary={
 	"w":"011101",
 	"x":"110011",
 	"y":"110111",
-	"z":"100111"
+	"z":"100111",
+        " ":"000000"
         }
 
 #print(brailleDictionary[d])
